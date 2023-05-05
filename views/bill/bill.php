@@ -89,7 +89,7 @@
                                             <a href="javascript:void(0);" class=" btn btn-success">
                                                  Xem </a>
                                             <?php } else { ?>
-                                                <a href="javascript:void(0);" class=" btn btn-danger" data-bs-toggle="modal" data-bs-target="#centermodal<?= $bill["id"]; ?>">
+                                                <a href="javascript:void(0);" class=" btn btn-warning" data-bs-toggle="modal" data-bs-target="#centermodal<?= $bill["id"]; ?>">
                                                 <i class="mdi mdi-cash-multiple me-1"></i> Thanh toán ngay </a>
                                             <?php } ?>
                                             
@@ -200,4 +200,5 @@
     .show {
         display: block !important;
     }
+    
 </style>
