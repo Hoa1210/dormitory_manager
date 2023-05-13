@@ -21,7 +21,7 @@ class m_student extends DB
 
     public function insert_student($id,$password, $name, $sex, $date_birth, $address, $email, $phone,  $id_user_create,  $avatar_url)
     {
-        $sql = "INSERT INTO users VALUES (null, $id, '$password', '$name', $sex, '$date_birth', '$address', '$email', '$phone', '$avatar_url', 1 ,1 ,0)";
+        $sql = "INSERT INTO users VALUES (null, '$id', '$password', '$name', $sex, '$date_birth', '$address', '$email', '$phone', '$avatar_url', 1 ,1 ,0, 1)";
 
         $resulst = $this->query($sql);
         if ($resulst) {
@@ -32,7 +32,7 @@ class m_student extends DB
 
     public function get_student_by_id($id)
     {
-        $sql = "SELECT *  FROM users  WHERE users.username = '$id'";
+        $sql = "SELECT *  FROM users  WHERE username = '$id'";
         return $this->get_row($sql);
     }
 
@@ -51,7 +51,9 @@ class m_student extends DB
     }
 
     public function delete_student($id){
-        $sql = "DELETE FROM users WHERE username='$id'";
+        
+        // $sql = "DELETE FROM users WHERE username = '$id'";
+        $sql = "UPDATE `users` SET `deleted_at` = '0' WHERE `username` = '$id'";
         return $this->query($sql);
     }
 
@@ -71,4 +73,8 @@ class m_student extends DB
         return $this->get_list($sql);
     }
 
+    public function getContractById($id){
+        $sql = "SELECT * FROM contracts WHERE student_id = '$id' AND liquidation IS NULL";
+        return $this->get_row($sql);
+    }
 }

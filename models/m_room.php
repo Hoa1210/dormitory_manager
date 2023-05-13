@@ -13,6 +13,7 @@ class m_room extends DB{
         (SELECT rooms.* ,COUNT(contracts.room_id) AS count 
          FROM rooms LEFT JOIN contracts 
          ON rooms.id = contracts.room_id 
+         WHERE contracts.liquidation IS NULL
          GROUP BY rooms.id) AS t1
          ON users.id = t1.user_id";
         return $this->get_list($sql);
@@ -32,7 +33,9 @@ class m_room extends DB{
     }
 
     public function select_student(){
-        $sql = "SELECT users.*, contracts.room_id,contracts.date_start, contracts.date_end FROM users INNER JOIN contracts ON users.username = contracts.student_id ";
+        $sql = "SELECT users.*, contracts.room_id,contracts.date_start, contracts.date_end 
+        FROM users INNER JOIN contracts 
+        ON users.username = contracts.student_id WHERE contracts.liquidation IS NULL";
         return $this->get_list($sql);
     }
 
@@ -61,7 +64,6 @@ class m_room extends DB{
          ON users.id = t1.user_id";
 
         return $this->get_row($sql);
-
     }
 
     public function getStudentByRoomsId($room_id){

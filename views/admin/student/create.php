@@ -25,11 +25,11 @@
                                 <br>
                                 - Mã sinh viên đồng thời là tên đăng nhập cho người dùng là sinh viên.
                                 <br>
-                                - Mật khẩu  mặc định có dạng :  
+                                - Nếu mã sinh viên là CN20111 thì mật khẩu  mặc định có dạng :  
                                 <br>
                                 "Sv" + mã sinh viên.
                                 <br>
-                                VD: Sv20111063009
+                                VD: SvCN20111
                                 <br>
                                 - Sinh viên có thể đổi mật khẩu sau khi được cấp tài khoản.
                             </span>
@@ -37,7 +37,10 @@
                         <div class="col-xl-6 ">
                             <div class="mb-3">
                                 <label for="id" class="form-label">Mã sinh viên  <span class="text-danger">(*)</span></label>
-                                <input type="number" id="id" name="id" class="form-control" placeholder="Nhập mã sinh viên..." required>
+                                <div style="display: flex;" >
+                                    <input type="text" value="CN" style="width: 50px!important" readonly class="form-control">
+                                    <input type="number" id="id" name="id" class="form-control" placeholder="Nhập mã sinh viên..." required>
+                                </div>
                                 <div class="invalid-feedback">
                                     Mã sinh viên đã tồn tại vui lòng nhập lại
                                 </div>

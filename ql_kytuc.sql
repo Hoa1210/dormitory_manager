@@ -2,10 +2,10 @@
 -- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th12 22, 2022 lúc 05:42 PM
--- Phiên bản máy phục vụ: 10.4.21-MariaDB
--- Phiên bản PHP: 7.4.25
+-- Host: 127.0.0.1
+-- Generation Time: May 13, 2023 at 10:53 AM
+-- Server version: 10.4.21-MariaDB
+-- PHP Version: 8.1.17
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Cơ sở dữ liệu: `ql_kytuc`
+-- Database: `ql_kytuc`
 --
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `contracts`
+-- Table structure for table `contracts`
 --
 
 CREATE TABLE `contracts` (
@@ -40,27 +40,28 @@ CREATE TABLE `contracts` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Đang đổ dữ liệu cho bảng `contracts`
+-- Dumping data for table `contracts`
 --
 
 INSERT INTO `contracts` (`id`, `student_id`, `room_id`, `user_id`, `date_start`, `date_end`, `method_payment`, `status`, `liquidation`) VALUES
-(3, '201112', 5, 40, '2022-11-27', '2022-11-27', 0, 1, '2022-12-22'),
-(4, '201113', 5, 40, '2022-11-27', '2022-11-27', 0, 1, '2022-12-22'),
-(5, '201114', 5, 40, '2022-11-27', '2022-11-27', 0, 0, NULL),
-(6, '201115', 5, 40, '2022-11-27', '2022-11-27', 0, 0, NULL),
-(7, '201116', 5, 40, '2022-11-27', '2022-11-27', 0, 0, NULL),
-(8, '201117', 10, 40, '2022-11-27', '2022-11-27', 0, 0, NULL),
-(9, '201118', 11, 40, '2022-11-27', '2022-11-27', 0, 0, NULL),
-(10, '201119', 11, 40, '2022-11-27', '2022-11-27', 0, 0, NULL),
-(11, '201120', 11, 40, '2022-11-27', '2022-11-27', 0, 0, NULL),
-(12, '201121', 11, 40, '2022-11-27', '2022-11-27', 0, 0, NULL),
-(13, '201122', 12, 40, '2022-11-27', '2022-11-27', 0, 0, NULL),
-(15, '2011113', 10, 40, '2022-12-15', '2022-12-15', NULL, 1, '2022-12-02');
+(3, '201112', 5, 40, '2022-11-27', '2022-11-27', 0, 1, '2022-11-02'),
+(4, '201113', 5, 40, '2022-11-27', '2022-11-27', 0, 1, '2022-11-27'),
+(5, '20111412', 5, 40, '2022-11-27', '2022-11-27', 0, 1, '2022-11-27'),
+(6, '201115', 5, 40, '2022-11-27', '2022-11-27', 0, 1, '2022-11-27'),
+(7, '201116', 5, 40, '2022-11-27', '2022-11-27', 0, 1, '2022-11-27'),
+(8, '201117', 10, 40, '2022-11-27', '2022-11-27', 0, 1, '2022-11-27'),
+(9, '201118', 11, 40, '2022-11-27', '2022-11-27', 0, 0, '2022-11-27'),
+(10, '201119', 11, 40, '2022-11-27', '2022-11-27', 0, 1, '2022-11-27'),
+(11, '201120', 11, 40, '2022-11-27', '2022-11-27', 0, 0, '2022-11-27'),
+(12, '201121', 11, 40, '2022-11-27', '2022-11-27', 0, 0, '2022-11-27'),
+(13, '201122', 12, 40, '2022-11-27', '2022-11-27', 0, 0, '2022-11-27'),
+(15, '2011113', 10, 40, '2022-12-15', '2022-12-15', NULL, 1, '2022-12-15'),
+(16, '201111', 11, 40, '2023-05-11', '2026-05-04', 0, 0, NULL);
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `electric_water`
+-- Table structure for table `electric_water`
 --
 
 CREATE TABLE `electric_water` (
@@ -79,7 +80,7 @@ CREATE TABLE `electric_water` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Đang đổ dữ liệu cho bảng `electric_water`
+-- Dumping data for table `electric_water`
 --
 
 INSERT INTO `electric_water` (`id`, `e_first`, `e_last`, `price_per_e`, `w_first`, `w_last`, `price_per_w`, `rooms_id`, `start_date`, `end_date`, `payment`, `status`) VALUES
@@ -92,7 +93,7 @@ INSERT INTO `electric_water` (`id`, `e_first`, `e_last`, `price_per_e`, `w_first
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `invoices`
+-- Table structure for table `invoices`
 --
 
 CREATE TABLE `invoices` (
@@ -106,7 +107,7 @@ CREATE TABLE `invoices` (
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `invoice_details`
+-- Table structure for table `invoice_details`
 --
 
 CREATE TABLE `invoice_details` (
@@ -118,7 +119,7 @@ CREATE TABLE `invoice_details` (
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `noti`
+-- Table structure for table `noti`
 --
 
 CREATE TABLE `noti` (
@@ -131,7 +132,7 @@ CREATE TABLE `noti` (
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `reports`
+-- Table structure for table `reports`
 --
 
 CREATE TABLE `reports` (
@@ -145,16 +146,17 @@ CREATE TABLE `reports` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Đang đổ dữ liệu cho bảng `reports`
+-- Dumping data for table `reports`
 --
 
 INSERT INTO `reports` (`id`, `user_id`, `student_id`, `title`, `message`, `created_at`, `status`) VALUES
-(4, NULL, '201113', 'Tìm đối ', 'Hí anh zai', '2022-12-22 13:48:42', 0);
+(4, NULL, '201113', 'Tìm đối ', 'Hí anh zai', '2023-05-09 11:19:08', 2),
+(5, NULL, '201112', 'Maats', 'Mat dien r a', '2023-05-09 11:20:58', 0);
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `rooms`
+-- Table structure for table `rooms`
 --
 
 CREATE TABLE `rooms` (
@@ -168,7 +170,7 @@ CREATE TABLE `rooms` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Đang đổ dữ liệu cho bảng `rooms`
+-- Dumping data for table `rooms`
 --
 
 INSERT INTO `rooms` (`id`, `room_name`, `price`, `max_num`, `user_id`, `status`, `area`) VALUES
@@ -177,13 +179,12 @@ INSERT INTO `rooms` (`id`, `room_name`, `price`, `max_num`, `user_id`, `status`,
 (11, 'A102', 100000, 6, 40, 1, 0),
 (12, 'A103', 500000, 6, 40, 0, 0),
 (14, 'B100', 1000000000, 12, 42, 0, 0),
-(15, 'A1111', 2, 9, 58, 1, 0),
-(16, 'Phòng hơn Chống', 123123, 12, 40, 0, 1);
+(15, 'A1111', 2, 9, 58, 1, 0);
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `services`
+-- Table structure for table `services`
 --
 
 CREATE TABLE `services` (
@@ -197,7 +198,7 @@ CREATE TABLE `services` (
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `users`
+-- Table structure for table `users`
 --
 
 CREATE TABLE `users` (
@@ -213,38 +214,39 @@ CREATE TABLE `users` (
   `avatar_url` text DEFAULT '\'avatar-default.png\'',
   `role` int(11) DEFAULT 1 COMMENT '0: Admin\r\n1: Sinh viên',
   `status` tinyint(2) DEFAULT 1 COMMENT '0: khóa\r\n1: Mở',
-  `color_scheme` tinyint(2) DEFAULT 0 COMMENT '0: nền trắng\r\n1: nền đen'
+  `color_scheme` tinyint(2) DEFAULT 0 COMMENT '0: nền trắng\r\n1: nền đen',
+  `deleted_at` tinyint(2) NOT NULL DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Đang đổ dữ liệu cho bảng `users`
+-- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `username`, `password`, `name`, `sex`, `date_birth`, `address`, `email`, `phone`, `avatar_url`, `role`, `status`, `color_scheme`) VALUES
-(40, 'admin', '202cb962ac59075b964b07152d234b70', 'Lương Văn Hòa ', 0, '2022-11-27', 'Tân Thành - Kiên Thành', 'hoa@gmail.com', '0972798037', '978gái xinh 1.1.jpg', 0, 1, 0),
-(42, 'khanh', '202cb962ac59075b964b07152d234b70', 'Đỗ Kim Khánh', 0, '0000-00-00', 'Hà Nội', 'toiroiluomoi123@gmail.com', '0357143496', '724avt_khanh.jpg', 0, 0, 0),
-(47, '201112', '2502552352d455b1280a579f4b80100d', 'Đỗ Kim Khánh', 0, '2022-11-27', 'Hà Nội', 'khanhthanchet@gmail.com', '0357143496', '55avt_khanh.jpg', 1, 1, 0),
-(48, '201113', '895182ccc51b4ef371103e8de2a907c0', 'Lưu Quang Vinh', 0, '2022-11-27', 'Lạng Sơn', 'vinh@gmail.com', '0357143496', '6avt_vinh.jpg', 1, 1, 0),
-(49, '201114', 'd719a83da23531fb2fb0d5bd855e0157', 'Trần Ngọc Thắng', 0, '2022-11-27', 'Hà Nội', 'thang@gmail.com', '0357143496', '11avt_chuot.jpg', 1, 1, 0),
-(50, '201115', '42c55c938c96383782711ae995fcc022', 'Nguyễn Đình Khang An', 0, '2022-11-27', 'Hà Nội', 'an@gmail.com', '0357143496', '762avt_an.jpg', 1, 1, 0),
-(51, '201116', 'adc9c219fe1fad6bef407187644e574e', 'Nguyễn Quốc Bình', 0, '2022-11-27', 'Hà Nội', 'binh@gmail.com', '0357143496', '303avt_binh.jpg', 1, 1, 0),
-(52, '201117', '09c637b7d1feae416d0cd653c8711d3b', 'Lã Thế Anh', 0, '2022-11-27', 'Phú Thọ', 'anh@gmail.com', '0357143496', '998avt3.jpg', 1, 1, 0),
-(53, '201118', 'd7e02e3a1890333a48640f920fd16660', 'Nguyễn Thu Thảo', 1, '2022-11-27', 'Bắc Giang', 'thao@gmail.com', '0357143496', '2692.jpg', 1, 1, 0),
-(54, '201119', '359f44359c9f35cee7d23ab4bfa97c21', 'elon must', 0, '2022-11-27', 'Bắc Giang', 'tesla@gmail.com', '0357143496', '770avt9.jpg', 1, 1, 0),
-(55, '201120', 'c497a5bfa0f37be9136a2b5120ff9c37', 'Mai Như Quềnh', 1, '2022-11-27', 'Thái Nguyên', 'quenh@gmail.com', '0357143496', '765avt1.jpg', 1, 1, 0),
-(56, '201121', '9825ff3d33f2a80714dcbef048153758', 'Bingchiling', 1, '2022-11-27', 'Bắc Giang', 'bing@gmail.com', '0972798037', '351avt3.jpg', 1, 1, 0),
-(57, '201122', '0c34a9f036ac28ed72b9ad882acfcf43', 'Nguyễn Thị Nở', 0, '2022-11-27', 'Bắc Giang', 'no@gmail.com', '0357143496', '622avt5.jpg', 1, 1, 0),
-(58, 'admin3', '202cb962ac59075b964b07152d234b70', 'Trần Ngọc Thắng', 0, '2022-11-27', 'Hà Nội', 'hoa@gmail.com', '0357143496', '807avt4.jpg', 0, 0, 1),
-(64, '201111', 'bfdea6d37022bdbf00aea5b2e77061fd', 'Lương Văn Hòa ', 0, '2022-12-15', 'ewrw', '123@gmail.comr', '09727980375', 'avatar-default.png', 1, 1, 0),
-(68, '2011113', 'de9bb7ec491ecb5bcca062d24c44b038', 'Lương Văn Hòa ', 0, '2022-12-15', 'sad', '123@gmail.coma', '0972798037', 'avatar-default.png', 1, 1, 0),
-(69, '20111133', '5db99c6989ce93c98edb8aacee1b97cd', 'Lương Văn Hòa  123', 0, '2022-12-22', '123', 'toiroiluomoi123@gmail.com2', '0357143496', '662gái xinh 1.1.jpg', 1, 1, 0);
+INSERT INTO `users` (`id`, `username`, `password`, `name`, `sex`, `date_birth`, `address`, `email`, `phone`, `avatar_url`, `role`, `status`, `color_scheme`, `deleted_at`) VALUES
+(40, 'admin', '202cb962ac59075b964b07152d234b70', 'Lương Văn Hòa ', 0, '2022-11-27', 'Tân Thành - Kiên Thành', 'hoa@gmail.com', '09999999999', 'avatar-default.png', 0, 1, 0, 1),
+(42, 'khanh', '202cb962ac59075b964b07152d234b70', 'Đỗ Kim Khánh', 0, '0000-00-00', 'Hà Nội', 'toiroiluomoi123@gmail.com', '0357143496', '724avt_khanh.jpg', 0, 1, 0, 1),
+(47, '201112', '2502552352d455b1280a579f4b80100d', 'Đỗ Kim Khánh', 0, '2022-11-27', 'Hà Nội', 'khanhthanchet@gmail.com', '0357143496', '55avt_khanh.jpg', 1, 1, 1, 0),
+(48, '201113', '895182ccc51b4ef371103e8de2a907c0', 'Lưu Quang Vinh', 0, '2022-11-27', 'Lạng Sơn', 'vinh@gmail.com', '0357143496', '6avt_vinh.jpg', 1, 1, 0, 0),
+(49, '20111412', 'd719a83da23531fb2fb0d5bd855e0157', 'Trần Ngọc Thắng', 0, '2022-11-27', 'Hà Nội', 'thang@gmail.com', '0357143496', '598wallpaperflare.com_wallpaper (1).jpg', 1, 1, 0, 1),
+(50, '201115', '42c55c938c96383782711ae995fcc022', 'Nguyễn Đình Khang An', 0, '2022-11-27', 'Hà Nội', 'an@gmail.com', '0357143496', '762avt_an.jpg', 1, 1, 0, 1),
+(51, '201116', 'adc9c219fe1fad6bef407187644e574e', 'Nguyễn Quốc Bình', 0, '2022-11-27', 'Hà Nội', 'binh@gmail.com', '0357143496', '303avt_binh.jpg', 1, 1, 0, 1),
+(52, '201117', '09c637b7d1feae416d0cd653c8711d3b', 'Lã Thế Anh', 0, '2022-11-27', 'Phú Thọ', 'anh@gmail.com', '0357143496', '998avt3.jpg', 1, 1, 0, 1),
+(53, '201118', 'd7e02e3a1890333a48640f920fd16660', 'Nguyễn Thu Thảo', 1, '2022-11-27', 'Bắc Giang', 'thao@gmail.com', '0357143496', '2692.jpg', 1, 1, 0, 1),
+(54, '201119', '359f44359c9f35cee7d23ab4bfa97c21', 'elon must', 0, '2022-11-27', 'Bắc Giang', 'tesla@gmail.com', '0357143496', '770avt9.jpg', 1, 1, 0, 1),
+(55, '201120', 'c497a5bfa0f37be9136a2b5120ff9c37', 'Mai Như Quềnh', 1, '2022-11-27', 'Thái Nguyên', 'quenh@gmail.com', '0357143496', '765avt1.jpg', 1, 1, 0, 1),
+(56, '201121', '9825ff3d33f2a80714dcbef048153758', 'Bingchiling', 1, '2022-11-27', 'Bắc Giang', 'bing@gmail.com', '0972798037', '351avt3.jpg', 1, 1, 0, 1),
+(57, '201122', '0c34a9f036ac28ed72b9ad882acfcf43', 'Nguyễn Thị Nở', 0, '2022-11-27', 'Bắc Giang', 'no@gmail.com', '0357143496', '622avt5.jpg', 1, 1, 0, 1),
+(58, 'admin3', '202cb962ac59075b964b07152d234b70', 'Trần Ngọc Thắng', 0, '2022-11-27', 'Hà Nội', 'hoa@gmail.com', '0357143496', '807avt4.jpg', 0, 1, 1, 1),
+(64, '201111', 'bfdea6d37022bdbf00aea5b2e77061fd', 'Lương Văn Hòa ', 0, '2022-12-15', 'ewrw', '123@gmail.comr', '09727980375', 'avatar-default.png', 1, 1, 0, 1),
+(68, '2011113', 'de9bb7ec491ecb5bcca062d24c44b038', 'Lương Văn Hòa ', 0, '2022-12-15', 'sad', '123@gmail.coma', '0972798037', 'avatar-default.png', 1, 1, 0, 1),
+(71, 'CN123', 'd332ccfed20cd4ba132c63ed60eb66d6', 'Luong Hoa', 0, '0000-00-00', '123', 'luonghoa121002@gmail.com', '0351743443', 'avatar-default.png', 1, 1, 0, 0);
 
 --
--- Chỉ mục cho các bảng đã đổ
+-- Indexes for dumped tables
 --
 
 --
--- Chỉ mục cho bảng `contracts`
+-- Indexes for table `contracts`
 --
 ALTER TABLE `contracts`
   ADD PRIMARY KEY (`id`),
@@ -253,14 +255,14 @@ ALTER TABLE `contracts`
   ADD KEY `fk_saa` (`student_id`);
 
 --
--- Chỉ mục cho bảng `electric_water`
+-- Indexes for table `electric_water`
 --
 ALTER TABLE `electric_water`
   ADD PRIMARY KEY (`id`),
   ADD KEY `fk_ew_roms` (`rooms_id`);
 
 --
--- Chỉ mục cho bảng `invoices`
+-- Indexes for table `invoices`
 --
 ALTER TABLE `invoices`
   ADD PRIMARY KEY (`id`),
@@ -268,7 +270,7 @@ ALTER TABLE `invoices`
   ADD KEY `user_id` (`user_id`);
 
 --
--- Chỉ mục cho bảng `invoice_details`
+-- Indexes for table `invoice_details`
 --
 ALTER TABLE `invoice_details`
   ADD PRIMARY KEY (`id`),
@@ -276,13 +278,13 @@ ALTER TABLE `invoice_details`
   ADD KEY `service_id` (`service_id`);
 
 --
--- Chỉ mục cho bảng `noti`
+-- Indexes for table `noti`
 --
 ALTER TABLE `noti`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `reports`
+-- Indexes for table `reports`
 --
 ALTER TABLE `reports`
   ADD PRIMARY KEY (`id`),
@@ -290,7 +292,7 @@ ALTER TABLE `reports`
   ADD KEY `user_id` (`user_id`);
 
 --
--- Chỉ mục cho bảng `rooms`
+-- Indexes for table `rooms`
 --
 ALTER TABLE `rooms`
   ADD PRIMARY KEY (`id`),
@@ -298,13 +300,13 @@ ALTER TABLE `rooms`
   ADD KEY `fk_room_user` (`user_id`);
 
 --
--- Chỉ mục cho bảng `services`
+-- Indexes for table `services`
 --
 ALTER TABLE `services`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `users`
+-- Indexes for table `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`),
@@ -312,107 +314,115 @@ ALTER TABLE `users`
   ADD KEY `fk_roleUser` (`role`);
 
 --
--- AUTO_INCREMENT cho các bảng đã đổ
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT cho bảng `contracts`
+-- AUTO_INCREMENT for table `contracts`
 --
 ALTER TABLE `contracts`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
--- AUTO_INCREMENT cho bảng `electric_water`
+-- AUTO_INCREMENT for table `electric_water`
 --
 ALTER TABLE `electric_water`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT cho bảng `invoices`
+-- AUTO_INCREMENT for table `invoices`
 --
 ALTER TABLE `invoices`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT cho bảng `invoice_details`
+-- AUTO_INCREMENT for table `invoice_details`
 --
 ALTER TABLE `invoice_details`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT cho bảng `noti`
+-- AUTO_INCREMENT for table `noti`
 --
 ALTER TABLE `noti`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT cho bảng `reports`
+-- AUTO_INCREMENT for table `reports`
 --
 ALTER TABLE `reports`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT cho bảng `rooms`
+-- AUTO_INCREMENT for table `rooms`
 --
 ALTER TABLE `rooms`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
--- AUTO_INCREMENT cho bảng `services`
+-- AUTO_INCREMENT for table `services`
 --
 ALTER TABLE `services`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT cho bảng `users`
+-- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=70;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=73;
 
 --
--- Các ràng buộc cho các bảng đã đổ
+-- Constraints for dumped tables
 --
 
 --
--- Các ràng buộc cho bảng `contracts`
+-- Constraints for table `contracts`
 --
 ALTER TABLE `contracts`
-  ADD CONSTRAINT `contracts_ibfk_1` FOREIGN KEY (`student_id`) REFERENCES `users` (`username`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `contracts_ibfk_1` FOREIGN KEY (`student_id`) REFERENCES `users` (`username`) ON DELETE NO ACTION ON UPDATE CASCADE,
   ADD CONSTRAINT `fk_s` FOREIGN KEY (`room_id`) REFERENCES `rooms` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_sa` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Các ràng buộc cho bảng `electric_water`
+-- Constraints for table `electric_water`
 --
 ALTER TABLE `electric_water`
   ADD CONSTRAINT `fk_ew_roms` FOREIGN KEY (`rooms_id`) REFERENCES `rooms` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Các ràng buộc cho bảng `invoices`
+-- Constraints for table `invoices`
 --
 ALTER TABLE `invoices`
-  ADD CONSTRAINT `invoices_ibfk_1` FOREIGN KEY (`student_id`) REFERENCES `users` (`username`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `invoices_ibfk_1` FOREIGN KEY (`student_id`) REFERENCES `users` (`username`) ON DELETE NO ACTION ON UPDATE CASCADE,
   ADD CONSTRAINT `invoices_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Các ràng buộc cho bảng `invoice_details`
+-- Constraints for table `invoice_details`
 --
 ALTER TABLE `invoice_details`
   ADD CONSTRAINT `invoice_details_ibfk_1` FOREIGN KEY (`invoices_id`) REFERENCES `invoices` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION,
   ADD CONSTRAINT `invoice_details_ibfk_2` FOREIGN KEY (`service_id`) REFERENCES `services` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Các ràng buộc cho bảng `reports`
+-- Constraints for table `reports`
 --
 ALTER TABLE `reports`
   ADD CONSTRAINT `reports_ibfk_1` FOREIGN KEY (`student_id`) REFERENCES `users` (`username`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `reports_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Các ràng buộc cho bảng `rooms`
+-- Constraints for table `rooms`
 --
 ALTER TABLE `rooms`
   ADD CONSTRAINT `fk_room_user` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+DELIMITER $$
+--
+-- Events
+--
+CREATE DEFINER=`root`@`localhost` EVENT `check_date_end_event` ON SCHEDULE EVERY 1 DAY STARTS '2023-05-13 10:48:01' ON COMPLETION NOT PRESERVE ENABLE DO UPDATE `contracts` SET `liquidation` = date_end WHERE date_end < CURDATE() AND liquidation IS NULL$$
+
+DELIMITER ;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

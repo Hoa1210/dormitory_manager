@@ -16,7 +16,7 @@ class m_contract extends DB{
     }
 
     public function getAllStudent(){
-        $sql = "SELECT users.* FROM users LEFT join contracts ON users.username = contracts.student_id WHERE users.role = 1 AND contracts.id is null";
+        $sql = "SELECT users.* FROM users LEFT join contracts ON users.username = contracts.student_id WHERE users.role = 1 AND  contracts.liquidation IS NOT NULL";
         return $this->get_list($sql);
     }
 
@@ -48,7 +48,7 @@ class m_contract extends DB{
 
     public function insert_contract($admin_id, $user_id, $room_id, $date_start, $date_end, $method_payment){
         $sql = "INSERT INTO `contracts`(`id`, `student_id`, `room_id`, `user_id`, `date_start`, `date_end`, `method_payment`, `status`, `liquidation`) 
-        VALUES (null,$user_id,$room_id,$admin_id,'$date_start','$date_end',$method_payment,0,null)";
+        VALUES (null,$user_id,$room_id,$admin_id,'$date_start','$date_end',$method_payment,1,null)";
 
         return $this->query($sql);
     }
@@ -65,4 +65,6 @@ class m_contract extends DB{
         $sql = "DELETE FROM contracts WHERE id = $id";
         return $this->query($sql);
     }
+
+    
 }

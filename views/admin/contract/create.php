@@ -18,6 +18,11 @@
                 <form action="" method="post">
                     <div class="row">
                         <div class="col-xl-3 "></div>
+                        <?php if(isset($data['mess'])){ ?> 
+                            <div class="alert alert-danger " role="alert">
+                                    <?= $data['mess'] ?>
+                                </div>
+                        <?php }else{ ?>
                         <div class="col-xl-6 ">
                             <?php if (isset($_COOKIE["err"])) : ?>
                                 <div class="alert alert-danger " role="alert">
@@ -60,6 +65,7 @@
 
                             <button type="submit" name="submit" class="btn btn-success">Thêm hợp đồng</button>
                         </div>
+                        <?php } ?>
                     </div>
                 </form>
 

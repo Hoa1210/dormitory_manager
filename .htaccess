@@ -29,11 +29,11 @@ RewriteRule admin/bill/delete-invoice/([0-9]+)$ index.php?role=admin&controller=
 RewriteRule admin/bill/view-details-invoice/([0-9]+)$ index.php?role=admin&controller=bill&method=invoiceDetails&id=$1
 
 RewriteRule admin/([a-z]+)/([a-z]+)$ index.php?role=admin&controller=$1&method=$2
-RewriteRule admin/([a-z]+)/([a-z]+)/([0-9]+)$ index.php?role=admin&controller=$1&method=$2&id=$3
+RewriteRule admin/([a-z]+)/([a-z]+)/([A-Z0-9]+)$ index.php?role=admin&controller=$1&method=$2&id=$3
 
-##
-###### ROLE STUDENT
-##
+#
+# ROLE STUDENT
+#
 
 RewriteRule ^([a-z]+)/([a-z]+)$ index.php?controller=$1&method=$2
-RewriteRule ^([a-z]+)/([a-z]+)/([0-9]+)$ index.php?controller=$1&method=$2&id=$3
+RewriteRule ^([a-z]+)/([a-z]+)/([A-Z0-9]+)$ index.php?controller=$1&method=$2&id=$3
