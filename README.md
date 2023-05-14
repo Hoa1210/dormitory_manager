@@ -1,5 +1,5 @@
 # Trang web quản lý ký túc xá
-- Sử dụng công nghệ PHP với mô hình MVC
+- Sử dụng công nghệ PHP với mô hình MVC 123
 
 [![Sơ đồ thực thể](https://app.diagrams.net/images/favicon-32x32.png)](https://app.diagrams.net/#G1XIh3qb25nBWZCPbr7D2nOuMT955zorh_)
 
@@ -33,4 +33,3 @@
 MIT
 
 **Hello my friend!**
-/*vinh cc*/
