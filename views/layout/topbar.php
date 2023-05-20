@@ -3,11 +3,11 @@
     <!-- LOGO -->
     <a href="<?php _WEB_ROOT ?>" class="topnav-logo" style="">
         <span class="topnav-logo-lg">
-            <h2>HaUI</h2>
+            <h2>PTIT</h2>
             <!-- <img src="assets/images/logo.png" alt="" height="16"> -->
         </span>
         <span class="topnav-logo-sm">
-            <h4>HaUI</h4>
+            <h4>PTIT</h4>
             <!-- <img src="assets/images/logo_sm.png" alt="" height="16"> -->
         </span>
     </a>

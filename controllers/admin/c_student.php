@@ -26,7 +26,7 @@ class c_student extends controller
         $check = $student->checkNumStudent();
 
         if (isset($_POST["idStudent"])) {
-            $check = $student->checkIssetStudent('CN'.$_POST["idStudent"]);
+            $check = $student->checkIssetStudent($_POST["idStudent"]);
             if (count($check) == 0) {
                 echo 1;
             } else {
@@ -132,15 +132,16 @@ class c_student extends controller
                 if (!$del) {
                     setcookie("err", "Không được xóa!", time() + 1, "/", "", 0);
                 } else {
-                    setcookie("suc", "Xóa thành công", time() + 1, "/", "", 0);
-                    // if ($link != "avatar-default.png") {
-                    //     if (file_exists("public/avatar/" . $link)) {
-                    //         $status = unlink("public/avatar/" . $link);
-                    //         if ($status) {
-                    //             setcookie("suc", "Xóa thành công", time() + 1, "/", "", 0);
-                    //         }
-                    //     }
-                    // }
+                    if ($link != "avatar-default.png") {
+                        if (file_exists("public/avatar/" . $link)) {
+                            $status = unlink("public/avatar/" . $link);
+                            if ($status) {
+                                setcookie("suc", "Xóa thành công", time() + 1, "/", "", 0);
+                            }
+                        }
+                    }else{
+                        setcookie("suc", "Xóa thành công", time() + 1, "/", "", 0);
+                    }
                 }
             }
             $this->redirect($this->base_url("admin/student/index"));

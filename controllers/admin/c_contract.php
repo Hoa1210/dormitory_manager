@@ -23,10 +23,6 @@ class c_contract extends controller {
         $result = new m_contract();
         $students = $result->getAllStudent();
 
-        if($students == null){
-            $mess = "Tất cả các sinh viên đều có hợp đồng! Vui lòng thêm sinh viên!";
-            $this->view("admin/contract/create", compact('mess'));
-        }
         if(isset($_POST['idS'])){
             $student = $result->getStudentByRoomsId($_POST['idS']);
             $roomss = $result->getAllRoomsByGender($student['sex']);

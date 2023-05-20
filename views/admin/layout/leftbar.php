@@ -2,11 +2,11 @@
 
     <a href="<?php _WEB_ROOT ?>" class="logo text-center logo-light" style="margin-top: 18px;">
         <span class="logo-lg">
-            <h2 class="">HaUI</h2>
+            <h2 class="">PTIT</h2>
             <!-- <img src="assets/images/logo.png" alt="" height="16"> -->
         </span>
         <span class="logo-sm">
-            <h4>HaUI</h4>
+            <h4>PTIT</h4>
             <!-- <img src="assets/images/logo_sm.png" alt="" height="16"> -->
         </span>
     </a>

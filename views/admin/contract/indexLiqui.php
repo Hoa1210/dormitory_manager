@@ -86,6 +86,7 @@
         x[i].onclick = function() {
             Swal.fire({
                 title: 'Bạn chắc chắn muốn xóa?',
+                icon: 'warning',
                 showDenyButton: true,
                 showCancelButton: false,
                 confirmButtonText: 'OK',

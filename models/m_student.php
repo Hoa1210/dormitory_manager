@@ -21,7 +21,7 @@ class m_student extends DB
 
     public function insert_student($id,$password, $name, $sex, $date_birth, $address, $email, $phone,  $id_user_create,  $avatar_url)
     {
-        $sql = "INSERT INTO users VALUES (null, '$id', '$password', '$name', $sex, '$date_birth', '$address', '$email', '$phone', '$avatar_url', 1 ,1 ,0, 1)";
+        $sql = "INSERT INTO users VALUES (null, '$id', '$password', '$name', $sex, '$date_birth', '$address', '$email', '$phone', '$avatar_url', 1 ,1 ,0)";
 
         $resulst = $this->query($sql);
         if ($resulst) {
@@ -52,8 +52,8 @@ class m_student extends DB
 
     public function delete_student($id){
         
-        // $sql = "DELETE FROM users WHERE username = '$id'";
-        $sql = "UPDATE `users` SET `deleted_at` = '0' WHERE `username` = '$id'";
+        $sql = "DELETE FROM users WHERE username = '$id'";
+        // $sql = "UPDATE `users` SET `deleted_at` = '0' WHERE `username` = '$id'";
         return $this->query($sql);
     }
 

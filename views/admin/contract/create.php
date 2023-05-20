@@ -18,11 +18,6 @@
                 <form action="" method="post">
                     <div class="row">
                         <div class="col-xl-3 "></div>
-                        <?php if(isset($data['mess'])){ ?> 
-                            <div class="alert alert-danger " role="alert">
-                                    <?= $data['mess'] ?>
-                                </div>
-                        <?php }else{ ?>
                         <div class="col-xl-6 ">
                             <?php if (isset($_COOKIE["err"])) : ?>
                                 <div class="alert alert-danger " role="alert">
@@ -31,8 +26,8 @@
                             <?php endif; ?>
 
                             <div class="mb-3">
-                                <label for="user_id" class="form-label">Sinh viên</label>
-                                <select class="form-select" id="user_id" name="user_id">
+                                <label for="user_id" class="form-label">Sinh viên <span class="text-danger">(*)</span></label>
+                                <select class="form-select" id="user_id" name="user_id" required>
                                     <?php  foreach($data["students"] as $value){?>
                                     <option value="<?php echo $value["username"]; ?>"><?php echo $value["name"]; ?></option>
                                     <?php } ?>
@@ -40,20 +35,20 @@
                             </div>
 
                             <div class="mb-3">
-                                <label for="room_id" class="form-label">Phòng</label>
-                                <select class="form-select" id="room_id" name="room_id">
+                                <label for="room_id" class="form-label">Phòng <span class="text-danger">(*)</span></label>
+                                <select class="form-select" id="room_id" name="room_id" required>
                                     <?php  foreach($data["rooms"] as $value){?>
                                     <option value="<?php echo $value["id"]; ?>"><?php echo $value["room_name"]; ?></option>
                                     <?php } ?>
                                 </select>
                             </div>
                             <div class="mb-3 position-relative" id="datepicker1">
-                                <label class="date_birth">Ngày tạo</label>
-                                <input type="date" class="form-control" id="date_birth" name="date_start">
+                                <label class="date_birth">Ngày tạo <span class="text-danger">(*)</span></label>
+                                <input type="date" class="form-control" id="date_birth" name="date_start" required>
                             </div>
                             <div class="mb-3 position-relative" id="datepicker1">
-                                <label class="date_birth">Ngày kết thúc</label>
-                                <input type="date" class="form-control" id="date_birth" name="date_end">
+                                <label class="date_birth">Ngày kết thúc <span class="text-danger">(*)</span></label>
+                                <input type="date" class="form-control" id="date_birth" name="date_end" required>
                             </div>
                             <div class="mb-3">
                                 <label for="status1" class="form-label">Phương thức thanh toán</label>
@@ -65,7 +60,6 @@
 
                             <button type="submit" name="submit" class="btn btn-success">Thêm hợp đồng</button>
                         </div>
-                        <?php } ?>
                     </div>
                 </form>
 
