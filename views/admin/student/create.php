@@ -37,10 +37,7 @@
                         <div class="col-xl-6 ">
                             <div class="mb-3">
                                 <label for="id" class="form-label">Mã sinh viên  <span class="text-danger">(*)</span></label>
-                                <div style="display: flex;" >
-                                    <input type="text" value="CN" style="width: 50px!important" readonly class="form-control">
-                                    <input type="number" id="id" name="id" class="form-control" placeholder="Nhập mã sinh viên..." required>
-                                </div>
+                                <input type="text" id="id" name="id" class="form-control" placeholder="Nhập mã sinh viên..." autocomplete="false" required>
                                 <div class="invalid-feedback">
                                     Mã sinh viên đã tồn tại vui lòng nhập lại
                                 </div>
@@ -68,7 +65,7 @@
                                 <input type="date" class="form-control" id="date_birth" name="date_birth">
                             </div>
 
-                            <div class="mb-0">
+                            <div class="mb-3">
                                 <label for="address" class="form-label">Địa chỉ</label>
                                 <textarea class="form-control" id="address" name="address" rows="5" placeholder="Nhập địa chỉ ..."></textarea>
                             </div>
@@ -80,7 +77,7 @@
 
                             <div class="mb-3">
                                 <label for="phone" class="form-label">Số điện thoại <span class="text-danger">(*)</span></label>
-                                <input type="text" id="phone" name="phone" class="form-control" maxlength="11" placeholder="Nhập số điện thoại..." required>
+                                <input type="number" id="phone" name="phone" class="form-control" maxlength="11" placeholder="Nhập số điện thoại..." required>
                             </div>
 
                             <div class="mb-3">

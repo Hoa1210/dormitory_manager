@@ -139,6 +139,8 @@
         x[i].onclick = function() {
             Swal.fire({
                 title: 'Bạn chắc chắn muốn xóa?',
+                text: "Nếu xóa phòng tất cả các thông tin liên quan đến phòng này đều bị xóa hết!!",
+                icon: 'warning',
                 showDenyButton: true,
                 showCancelButton: false,
                 confirmButtonText: 'OK',

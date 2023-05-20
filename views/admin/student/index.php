@@ -42,7 +42,6 @@
                             <?php
                             if (isset($data["students"])) {
                                 foreach ($data["students"] as $key => $value) {
-                                    if($value['deleted_at'] == 1){
                             ?>
                                     <tr>
                                         <td><?= $key + 1; ?></td>
@@ -87,7 +86,6 @@
                                         </td>
                                     </tr>
                             <?php
-                                    }
                                 }
                             }
                             ?>
@@ -101,7 +99,7 @@
     $(".form-delete").on("click", function() {
         Swal.fire({
             title: 'Bạn chắc chắn muốn xóa?',
-            text: "Nếu xóa thì hợp đồng sẽ tự động thanh lý",
+            text: "Nếu xóa thì tất cả các dữ liệu liên quan đến sinh viên này sẽ bị xóa hết bao gồm hợp đồng, dịch vụ, báo cáo!!",
             icon: 'warning',
             showDenyButton: true,
             showCancelButton: false,
