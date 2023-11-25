@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 13, 2023 at 10:53 AM
+-- Generation Time: May 20, 2023 at 08:49 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.1.17
 
@@ -44,19 +44,9 @@ CREATE TABLE `contracts` (
 --
 
 INSERT INTO `contracts` (`id`, `student_id`, `room_id`, `user_id`, `date_start`, `date_end`, `method_payment`, `status`, `liquidation`) VALUES
-(3, '201112', 5, 40, '2022-11-27', '2022-11-27', 0, 1, '2022-11-02'),
-(4, '201113', 5, 40, '2022-11-27', '2022-11-27', 0, 1, '2022-11-27'),
-(5, '20111412', 5, 40, '2022-11-27', '2022-11-27', 0, 1, '2022-11-27'),
-(6, '201115', 5, 40, '2022-11-27', '2022-11-27', 0, 1, '2022-11-27'),
-(7, '201116', 5, 40, '2022-11-27', '2022-11-27', 0, 1, '2022-11-27'),
-(8, '201117', 10, 40, '2022-11-27', '2022-11-27', 0, 1, '2022-11-27'),
-(9, '201118', 11, 40, '2022-11-27', '2022-11-27', 0, 0, '2022-11-27'),
-(10, '201119', 11, 40, '2022-11-27', '2022-11-27', 0, 1, '2022-11-27'),
-(11, '201120', 11, 40, '2022-11-27', '2022-11-27', 0, 0, '2022-11-27'),
-(12, '201121', 11, 40, '2022-11-27', '2022-11-27', 0, 0, '2022-11-27'),
-(13, '201122', 12, 40, '2022-11-27', '2022-11-27', 0, 0, '2022-11-27'),
-(15, '2011113', 10, 40, '2022-12-15', '2022-12-15', NULL, 1, '2022-12-15'),
-(16, '201111', 11, 40, '2023-05-11', '2026-05-04', 0, 0, NULL);
+(17, 'CNB20DCCN421', 18, 40, '2023-05-14', '2023-05-16', 0, 1, '2023-05-14'),
+(19, 'CNB20DCCN421', 18, 40, '2023-05-03', '2023-05-13', 0, 1, NULL),
+(21, 'CNB20DCCN422', 18, 40, '2023-05-03', '2023-05-25', 0, 1, NULL);
 
 -- --------------------------------------------------------
 
@@ -78,17 +68,6 @@ CREATE TABLE `electric_water` (
   `payment` tinyint(2) DEFAULT NULL COMMENT '1: tiền mặt \r\n0: chuyển khoản',
   `status` tinyint(1) NOT NULL COMMENT '0: Chưa thanh toán\r\n1: Đã thanh toán'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `electric_water`
---
-
-INSERT INTO `electric_water` (`id`, `e_first`, `e_last`, `price_per_e`, `w_first`, `w_last`, `price_per_w`, `rooms_id`, `start_date`, `end_date`, `payment`, `status`) VALUES
-(1, 1, 2, 3, 4, 5, 6, 5, '2022-11-25', '2022-11-25', 0, 1),
-(2, 1, 2, 3, 4, 5, 6, 5, '2022-11-25', '2022-11-25', 1, 1),
-(3, 121, 2222, 3, 4, 5, 5, 5, '2022-11-25', '2022-11-25', 0, 0),
-(5, 1, 1, 1, 1, 1, 1, 5, '2022-11-25', '2022-11-25', NULL, 0),
-(6, 1, 1, 1, 1, 1, 1, 5, '2022-11-25', '2022-11-25', NULL, 0);
 
 -- --------------------------------------------------------
 
@@ -145,14 +124,6 @@ CREATE TABLE `reports` (
   `status` tinyint(4) NOT NULL COMMENT '0: đã gửi\r\n1: đang xử lý\r\n2: đã xử lý '
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data for table `reports`
---
-
-INSERT INTO `reports` (`id`, `user_id`, `student_id`, `title`, `message`, `created_at`, `status`) VALUES
-(4, NULL, '201113', 'Tìm đối ', 'Hí anh zai', '2023-05-09 11:19:08', 2),
-(5, NULL, '201112', 'Maats', 'Mat dien r a', '2023-05-09 11:20:58', 0);
-
 -- --------------------------------------------------------
 
 --
@@ -174,12 +145,7 @@ CREATE TABLE `rooms` (
 --
 
 INSERT INTO `rooms` (`id`, `room_name`, `price`, `max_num`, `user_id`, `status`, `area`) VALUES
-(5, 'A100', 90000, 6, 42, 1, 0),
-(10, 'A101', 100, 2, 40, 1, 0),
-(11, 'A102', 100000, 6, 40, 1, 0),
-(12, 'A103', 500000, 6, 40, 0, 0),
-(14, 'B100', 1000000000, 12, 42, 0, 0),
-(15, 'A1111', 2, 9, 58, 1, 0);
+(18, '102-B1', 123, 12, 40, 1, 0);
 
 -- --------------------------------------------------------
 
@@ -214,32 +180,18 @@ CREATE TABLE `users` (
   `avatar_url` text DEFAULT '\'avatar-default.png\'',
   `role` int(11) DEFAULT 1 COMMENT '0: Admin\r\n1: Sinh viên',
   `status` tinyint(2) DEFAULT 1 COMMENT '0: khóa\r\n1: Mở',
-  `color_scheme` tinyint(2) DEFAULT 0 COMMENT '0: nền trắng\r\n1: nền đen',
-  `deleted_at` tinyint(2) NOT NULL DEFAULT 1
+  `color_scheme` tinyint(2) DEFAULT 0 COMMENT '0: nền trắng\r\n1: nền đen'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `username`, `password`, `name`, `sex`, `date_birth`, `address`, `email`, `phone`, `avatar_url`, `role`, `status`, `color_scheme`, `deleted_at`) VALUES
-(40, 'admin', '202cb962ac59075b964b07152d234b70', 'Lương Văn Hòa ', 0, '2022-11-27', 'Tân Thành - Kiên Thành', 'hoa@gmail.com', '09999999999', 'avatar-default.png', 0, 1, 0, 1),
-(42, 'khanh', '202cb962ac59075b964b07152d234b70', 'Đỗ Kim Khánh', 0, '0000-00-00', 'Hà Nội', 'toiroiluomoi123@gmail.com', '0357143496', '724avt_khanh.jpg', 0, 1, 0, 1),
-(47, '201112', '2502552352d455b1280a579f4b80100d', 'Đỗ Kim Khánh', 0, '2022-11-27', 'Hà Nội', 'khanhthanchet@gmail.com', '0357143496', '55avt_khanh.jpg', 1, 1, 1, 0),
-(48, '201113', '895182ccc51b4ef371103e8de2a907c0', 'Lưu Quang Vinh', 0, '2022-11-27', 'Lạng Sơn', 'vinh@gmail.com', '0357143496', '6avt_vinh.jpg', 1, 1, 0, 0),
-(49, '20111412', 'd719a83da23531fb2fb0d5bd855e0157', 'Trần Ngọc Thắng', 0, '2022-11-27', 'Hà Nội', 'thang@gmail.com', '0357143496', '598wallpaperflare.com_wallpaper (1).jpg', 1, 1, 0, 1),
-(50, '201115', '42c55c938c96383782711ae995fcc022', 'Nguyễn Đình Khang An', 0, '2022-11-27', 'Hà Nội', 'an@gmail.com', '0357143496', '762avt_an.jpg', 1, 1, 0, 1),
-(51, '201116', 'adc9c219fe1fad6bef407187644e574e', 'Nguyễn Quốc Bình', 0, '2022-11-27', 'Hà Nội', 'binh@gmail.com', '0357143496', '303avt_binh.jpg', 1, 1, 0, 1),
-(52, '201117', '09c637b7d1feae416d0cd653c8711d3b', 'Lã Thế Anh', 0, '2022-11-27', 'Phú Thọ', 'anh@gmail.com', '0357143496', '998avt3.jpg', 1, 1, 0, 1),
-(53, '201118', 'd7e02e3a1890333a48640f920fd16660', 'Nguyễn Thu Thảo', 1, '2022-11-27', 'Bắc Giang', 'thao@gmail.com', '0357143496', '2692.jpg', 1, 1, 0, 1),
-(54, '201119', '359f44359c9f35cee7d23ab4bfa97c21', 'elon must', 0, '2022-11-27', 'Bắc Giang', 'tesla@gmail.com', '0357143496', '770avt9.jpg', 1, 1, 0, 1),
-(55, '201120', 'c497a5bfa0f37be9136a2b5120ff9c37', 'Mai Như Quềnh', 1, '2022-11-27', 'Thái Nguyên', 'quenh@gmail.com', '0357143496', '765avt1.jpg', 1, 1, 0, 1),
-(56, '201121', '9825ff3d33f2a80714dcbef048153758', 'Bingchiling', 1, '2022-11-27', 'Bắc Giang', 'bing@gmail.com', '0972798037', '351avt3.jpg', 1, 1, 0, 1),
-(57, '201122', '0c34a9f036ac28ed72b9ad882acfcf43', 'Nguyễn Thị Nở', 0, '2022-11-27', 'Bắc Giang', 'no@gmail.com', '0357143496', '622avt5.jpg', 1, 1, 0, 1),
-(58, 'admin3', '202cb962ac59075b964b07152d234b70', 'Trần Ngọc Thắng', 0, '2022-11-27', 'Hà Nội', 'hoa@gmail.com', '0357143496', '807avt4.jpg', 0, 1, 1, 1),
-(64, '201111', 'bfdea6d37022bdbf00aea5b2e77061fd', 'Lương Văn Hòa ', 0, '2022-12-15', 'ewrw', '123@gmail.comr', '09727980375', 'avatar-default.png', 1, 1, 0, 1),
-(68, '2011113', 'de9bb7ec491ecb5bcca062d24c44b038', 'Lương Văn Hòa ', 0, '2022-12-15', 'sad', '123@gmail.coma', '0972798037', 'avatar-default.png', 1, 1, 0, 1),
-(71, 'CN123', 'd332ccfed20cd4ba132c63ed60eb66d6', 'Luong Hoa', 0, '0000-00-00', '123', 'luonghoa121002@gmail.com', '0351743443', 'avatar-default.png', 1, 1, 0, 0);
+INSERT INTO `users` (`id`, `username`, `password`, `name`, `sex`, `date_birth`, `address`, `email`, `phone`, `avatar_url`, `role`, `status`, `color_scheme`) VALUES
+(40, 'admin', '202cb962ac59075b964b07152d234b70', 'Lương Văn Hòa ', 0, '2022-11-27', 'Tân Thành - Kiên Thành', 'hoa@gmail.com', '09999999999', 'avatar-default.png', 0, 1, 0),
+(73, 'CNB20DCCN421', '009c4e472f8b0e24fb689db4ae121696', 'Luong Hoa', 0, '2023-05-02', '123', 'luonghoa121002@gmail.com', '0351743443', 'avatar-default.png', 1, 1, 0),
+(75, 'CNB20DCCN422', '009c4e472f8b0e24fb689db4ae121696', 'mavuvong', 0, '0000-00-00', '', '123@gmail.com', '0357143496', 'avatar-default.png', 1, 1, 0),
+(79, 'B20DCCN422', 'c39728699104fc25c8f245804a8dde01', 'Luong Hoa', 0, '0000-00-00', '123', 'luonghoa121002@gmail.com', '0351743443', 'avatar-default.png', 1, 1, 0);
 
 --
 -- Indexes for dumped tables
@@ -321,7 +273,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `contracts`
 --
 ALTER TABLE `contracts`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `electric_water`
@@ -357,7 +309,7 @@ ALTER TABLE `reports`
 -- AUTO_INCREMENT for table `rooms`
 --
 ALTER TABLE `rooms`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `services`
@@ -369,7 +321,7 @@ ALTER TABLE `services`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=73;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=80;
 
 --
 -- Constraints for dumped tables
@@ -379,42 +331,42 @@ ALTER TABLE `users`
 -- Constraints for table `contracts`
 --
 ALTER TABLE `contracts`
-  ADD CONSTRAINT `contracts_ibfk_1` FOREIGN KEY (`student_id`) REFERENCES `users` (`username`) ON DELETE NO ACTION ON UPDATE CASCADE,
-  ADD CONSTRAINT `fk_s` FOREIGN KEY (`room_id`) REFERENCES `rooms` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_sa` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `contracts_ibfk_1` FOREIGN KEY (`student_id`) REFERENCES `users` (`username`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_s` FOREIGN KEY (`room_id`) REFERENCES `rooms` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_sa` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `electric_water`
 --
 ALTER TABLE `electric_water`
-  ADD CONSTRAINT `fk_ew_roms` FOREIGN KEY (`rooms_id`) REFERENCES `rooms` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_ew_roms` FOREIGN KEY (`rooms_id`) REFERENCES `rooms` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `invoices`
 --
 ALTER TABLE `invoices`
-  ADD CONSTRAINT `invoices_ibfk_1` FOREIGN KEY (`student_id`) REFERENCES `users` (`username`) ON DELETE NO ACTION ON UPDATE CASCADE,
-  ADD CONSTRAINT `invoices_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `invoices_ibfk_1` FOREIGN KEY (`student_id`) REFERENCES `users` (`username`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `invoices_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `invoice_details`
 --
 ALTER TABLE `invoice_details`
-  ADD CONSTRAINT `invoice_details_ibfk_1` FOREIGN KEY (`invoices_id`) REFERENCES `invoices` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION,
-  ADD CONSTRAINT `invoice_details_ibfk_2` FOREIGN KEY (`service_id`) REFERENCES `services` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `invoice_details_ibfk_1` FOREIGN KEY (`invoices_id`) REFERENCES `invoices` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `invoice_details_ibfk_2` FOREIGN KEY (`service_id`) REFERENCES `services` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `reports`
 --
 ALTER TABLE `reports`
-  ADD CONSTRAINT `reports_ibfk_1` FOREIGN KEY (`student_id`) REFERENCES `users` (`username`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `reports_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `reports_ibfk_1` FOREIGN KEY (`student_id`) REFERENCES `users` (`username`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `reports_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `rooms`
 --
 ALTER TABLE `rooms`
-  ADD CONSTRAINT `fk_room_user` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_room_user` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 DELIMITER $$
 --

@@ -14,7 +14,7 @@
     <link href="<?= _WEB_ROOT ?>/public/css/icons.min.css" rel="stylesheet" type="text/css" />
     <link href="<?= _WEB_ROOT ?>/public/css/app.min.css" rel="stylesheet" type="text/css" id="app-style" />
     <script src="<?= _WEB_ROOT ?>/public/js/jquery-3.6.1.min.js"></script>
-    <link href="<?= _WEB_ROOT ?>/public/js/vendor/select2/css/select2.min.css" rel="stylesheet" type="text/css" />
+    <!-- <link href="<?= _WEB_ROOT ?>/public/js/vendor/select2/css/select2.min.css" rel="stylesheet" type="text/css" /> -->
     <link rel="stylesheet" href="<?= _WEB_ROOT ?>/node_modules/animate.css/animate.min.css">
 
     <style>

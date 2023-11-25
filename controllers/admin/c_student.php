@@ -36,7 +36,7 @@ class c_student extends controller
         }
 
         if (isset($_POST["submit"])) {
-            $id = 'CN' . $_POST["id"];
+            $id =  $_POST["id"];
             $password = "Sv" . $id;
             $name = $_POST["name"];
             $sex = $_POST["gender"];

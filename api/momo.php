@@ -68,8 +68,7 @@ $data = array(
     'signature' => $signature
 );
 $result = execPostRequest($endpoint, json_encode($data));
-$jsonResult = json_decode($result, true);  // decode json
+$jsonResult = json_decode($result, true);
 
-//Just a example, please check more in there
 
 header('Location: ' . $jsonResult['payUrl']);
