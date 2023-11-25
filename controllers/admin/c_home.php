@@ -39,10 +39,9 @@ class c_home extends controller{
         }
 
         $rooms = $result->getAllRooms();
-
         $checkStudent = $result->checkNumStudent();
-
         $users = $result->getAllUsers();
+        
         $this->view("admin/home/index", compact('students','students_end','rooms','checkStudent','users'));
     }
 
